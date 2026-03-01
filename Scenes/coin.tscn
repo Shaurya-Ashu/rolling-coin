@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://deok3id423wko"]
+
+[ext_resource type="Texture2D" uid="uid://cjinckkb0ah4" path="res://Assets/sprite_0.png" id="1_2qo34"]
+[ext_resource type="Script" uid="uid://dj1iuam68xbdt" path="res://Scripts/coin.gd" id="1_jgi06"]
+[ext_resource type="Texture2D" uid="uid://ds5wigbqy0tv6" path="res://Assets/sprite_3.png" id="3_ffmqm"]
+[ext_resource type="Texture2D" uid="uid://dlrd4cwcndu2w" path="res://Assets/sprite_2.png" id="4_81h6x"]
+[ext_resource type="Texture2D" uid="uid://cgxhuuu66tqt4" path="res://Assets/sprite_1.png" id="5_qbp07"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgi06"]
+atlas = ExtResource("1_2qo34")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g537i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgi06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ffmqm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_81h6x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qbp07")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2qo34")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ffmqm")
+}],
+"loop": true,
+"name": &"move_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_81h6x")
+}],
+"loop": true,
+"name": &"move_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_qbp07")
+}],
+"loop": true,
+"name": &"move_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_2qo34")
+}],
+"loop": true,
+"name": &"move_up",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h2p6v"]
+radius = 8.0
+
+[node name="coin" type="CharacterBody2D" unique_id=1573117611]
+z_index = 5
+collision_layer = 2
+collision_priority = 2.0
+script = ExtResource("1_jgi06")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=936899600]
+position = Vector2(0, -7)
+sprite_frames = SubResource("SpriteFrames_g537i")
+animation = &"move_up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1151866325]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_h2p6v")
