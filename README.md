@@ -11,5 +11,8 @@ there are 4 levels and at each level the difficulties increases.
 The Countrolls are very simple use arrow key for forward and backward movement and space bar for jumping .
 If you land on spike you die and respawn at the start .
 
+You can try it out at 
+https://shaurya-ashu.itch.io/rolling-coin
+
 
 <img width="165" height="133" alt="Screenshot 2026-03-01 at 6 56 46 AM" src="https://github.com/user-attachments/assets/57dce7b2-f77c-465e-adb8-bf667cd5ea41" />
