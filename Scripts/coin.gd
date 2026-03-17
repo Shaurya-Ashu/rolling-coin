@@ -10,25 +10,23 @@ var is_dead = false
 @onready var anim = $AnimatedSprite2D
 
 
-# =====================================
-# MAIN PHYSICS LOOP
-# =====================================
+
 func _physics_process(delta):
 
 	if is_dead:
 		return
 
-	# -------- GRAVITY --------
+	
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
 
-	# -------- LEFT / RIGHT --------
+	
 	var direction = Input.get_axis("move left", "move right")
 	velocity.x = direction * speed
 
 
-	# -------- JUMP --------
+	
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_force
 
@@ -38,9 +36,7 @@ func _physics_process(delta):
 	update_animation(direction)
 
 
-# =====================================
-# ANIMATION SYSTEM
-# =====================================
+
 func update_animation(direction):
 
 	if not is_on_floor():
@@ -54,6 +50,3 @@ func update_animation(direction):
 
 	else:
 		anim.play("move_left")
-
-
-# =====================================
